@@ -1,0 +1,192 @@
+/* Import a modern clean font directly into the CSS */
+@import url('https://googleapis.com');
+
+/* Style the body to center your app and add a beautiful animated gradient background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #1f4068, #162447, #0f4c75, #3282b8);
+  background-size: 400% 400%;
+  animation: gradientAnimation 12s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* FIX: Made the box significantly smaller and tighter */
+#root > div {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 18px;             /* Reduced inner spacing */
+  width: 290px;              /* Shrunk width down from 360px */
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Headings typography styling - scaled down for a smaller card */
+h1, h3 {
+  margin: 5px 0 10px 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  font-size: 1.1rem;         /* Shrunk search title */
+  opacity: 0.9;
+}
+
+h1 {
+  font-size: 1.25rem;        /* Shrunk info title */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 12px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Form structure optimization */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+
+/* Remove unnecessary line break spaces */
+form br {
+  display: none;
+}
+
+/* Modern styling for the Material UI Input Container */
+.MuiFormControl-root.MuiTextField-root {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Material UI text input height adjustment */
+.MuiInputBase-root {
+  border-radius: 10px !important;
+}
+
+.MuiInputBase-input {
+  padding: 12px 14px !important; /* Made the input slot shorter */
+}
+
+/* Upgrade the Material UI Text variant button to a clean small button */
+form button.MuiButton-root {
+  width: 100%;
+  margin-top: 8px !important;
+  background-color: #3282b8 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 8px 0 !important;   /* Thinner button height */
+  border-radius: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: 0.8rem !important;
+  box-shadow: 0 4px 12px rgba(50, 130, 184, 0.3) !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+form button.MuiButton-root:hover {
+  background-color: #0f4c75 !important;
+  transform: translateY(-1px);
+}
+
+/* API error feedback message styling */
+form p {
+  color: #ff6b6b;
+  font-weight: 600;
+  margin: 6px 0 0 0;
+  font-size: 0.85rem;
+}
+
+/* Style the Material UI Display Card container */
+.MuiPaper-root.MuiCard-root {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  overflow: hidden;
+}
+
+/* Card image height reduction */
+.MuiCardMedia-root {
+  height: 100px !important;    /* Reduced from 140px to stay compact */
+}
+
+/* Inner card content padding tweak */
+.MuiCardContent-root {
+  padding: 12px !important;   /* Tighter padding inside the card */
+}
+
+/* Center align city text header inside card along with its status icon */
+.MuiTypography-h5 {
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
+  color: #162447 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px !important;
+  text-transform: capitalize;
+}
+
+/* Scale the weather system icons to fit the smaller font */
+.MuiTypography-h5 svg {
+  font-size: 1.3rem;
+}
+
+/* Color codes for explicit inline climate icons */
+.MuiTypography-h5 svg[data-testid="SunnyIcon"] { color: #ffb300; }
+.MuiTypography-h5 svg[data-testid="ThunderstormIcon"] { color: #4682b4; }
+.MuiTypography-h5 svg[data-testid="AcUnitIcon"] { color: #00bfff; }
+
+/* Grid structure formatting for weather details text snippet blocks */
+.MuiTypography-body2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.MuiTypography-body2 div {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 6px 8px;           /* Slimmer data badges */
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.75rem;         /* Smaller text for a cleaner look */
+  color: #4a4a4a !important;
+  text-align: left;
+}
+
+/* Paragraph weather description format block stretched full width across baseline */
+.MuiTypography-body2 p {
+  grid-column: span 2;
+  margin: 6px 0 0 0;
+  font-style: italic;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #666666;
+  line-height: 1.3;
+}
